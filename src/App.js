@@ -10,10 +10,6 @@ function App() {
   //更新todoList資料
   function addTodo(data) {
     setTodoList([...todoList, data]);
-    //自動跳到最新的todo
-    setTimeout(() => {
-      listRef.current.scrollTop = listRef.current.scrollHeight;
-    }, 0);
   }
   //刪除todo
   function deleteTodo(id) {
@@ -47,6 +43,10 @@ function App() {
       setTodoList(todoList.sort((a, b) => a.time - b.time));
     }
   }
+  //todolist資料更新自動跳到最新的todo
+  useEffect(() => {
+    listRef.current.scrollTop = listRef.current.scrollHeight;
+  }, [todoList]);
 
   //TodoList完成度
   useEffect(() => {
