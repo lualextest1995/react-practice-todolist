@@ -70,6 +70,23 @@ body .container .wrap .sort .big-btn .small-btn {
   border-radius: 50%;
   cursor: pointer;
 }
+body .container .wrap .sort .sort-big-btn {
+  display: flex;
+  align-items: center;
+  background-color: rgb(122, 158, 197);
+  width: 50px;
+  height: 30px;
+  border-radius: 3rem;
+  margin-left: 5px;
+}
+body .container .wrap .sort .sort-big-btn .sort-small-btn {
+  background-color: white;
+  width: 28px;
+  height: 28px;
+  margin-left: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 .add {
   padding-top: 100px;

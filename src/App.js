@@ -6,8 +6,6 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [totalChecked, setTotalChecked] = useState(0);
   const [sortTodoList, setSortTodoList] = useState(false);
-  const sortBtn = useRef(null);
-  const sortBigBtn = useRef(null);
   const listRef = useRef(null);
   //更新todoList資料
   function addTodo(data) {
@@ -38,8 +36,6 @@ function App() {
   function sortChecked() {
     setSortTodoList(!sortTodoList);
     if (!sortTodoList) {
-      sortBtn.current.style = "margin-left:20px;background-color:white";
-      sortBigBtn.current.style = "background-color:rgb(122, 158, 197);";
       let trueTodo = todoList.filter((todo) => {
         return todo.isCompleted === true;
       });
@@ -48,8 +44,6 @@ function App() {
       });
       setTodoList([...falseTodo, ...trueTodo]);
     } else {
-      sortBtn.current.style = "margin-left:1px";
-      sortBigBtn.current.style = "background-color:white";
       setTodoList(todoList.sort((a, b) => a.time - b.time));
     }
   }
@@ -82,10 +76,9 @@ function App() {
           ></List>
           <h2 className="sort">
             Move done things to end?
-            <div className="big-btn" ref={sortBigBtn}>
+            <div className={sortTodoList ? "sort-big-btn" : "big-btn"}>
               <div
-                className="small-btn"
-                ref={sortBtn}
+                className={sortTodoList ? "sort-small-btn" : "small-btn"}
                 onClick={sortChecked}
               ></div>
             </div>

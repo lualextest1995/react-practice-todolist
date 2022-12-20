@@ -66,6 +66,23 @@ body {
             cursor: pointer;
           }
         }
+        .sort-big-btn {
+          display: flex;
+          align-items: center;
+          background-color: rgb(122, 158, 197);
+          width: 50px;
+          height: 30px;
+          border-radius: 3rem;
+          margin-left: 5px;
+          .sort-small-btn {
+            background-color: white;
+            width: 28px;
+            height: 28px;
+            margin-left: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
